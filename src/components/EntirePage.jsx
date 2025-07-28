@@ -16,11 +16,10 @@ function EntirePage() {
       className="flex flex-col justify-center items-center w-full px-2 sm:px-4 gap-24 py-20"
       style={{ backgroundColor: isDark ? '#2d333b' : 'white' }}
     >
-      <section id="welcome" className="pt-5"><WelcomeSection /></section>
+      <section id="welcome" ><WelcomeSection /></section>
       <section id="about"><AboutSection /></section>
       <section id="project"><ProjectSection /></section>
       <section id="skills"><SkillSection /></section>
-      <section id="resume"><ResumeSection /></section>
       <section id="contact"><ContactSection /></section>
     </div>
   );

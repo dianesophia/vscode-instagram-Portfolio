@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Github, Linkedin, Mail, Send, Phone, MapPin } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { ShineBorder } from './ui/shine-border';
 
 function ContactSection() {
   const { theme } = useTheme();
@@ -27,7 +28,7 @@ function ContactSection() {
     >
       <div className="max-w-6xl w-full">
         <Card
-          className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.5)]"
+          className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500"
           style={{
             backgroundColor: isDark ? '#22272e' : 'white',
             borderColor: isDark ? '#374151' : '#e5e7eb',
@@ -35,6 +36,7 @@ function ContactSection() {
             color: isDark ? '#e2e8f0' : '#1a202c',
           }}
         >
+          <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
           <CardContent className="p-8 md:p-12">
             <div className="flex flex-col items-start text-left mb-8">
               <p className="text-sm font-mono text-gray-500 dark:text-gray-400 mb-2">
@@ -47,7 +49,7 @@ function ContactSection() {
 
             <div className="grid lg:grid-cols-2 gap-6">
               <div className="space-y-6">
-                <div className=" dark:bg-gray-900/50 border border-gray-500 rounded-lg p-6 font-mono text-sm shadow-inner">
+                <div className="dark:bg-gray-900/50 border border-gray-500 rounded-2xl p-6 font-mono text-sm shadow-md hover:shadow-xl transition-all duration-300">
                   <div className="text-gray-400 mb-4">
                     <span className="text-purple-400">const</span>{' '}
                     <span className="text-cyan-400">contact</span> = {'{'}
@@ -84,7 +86,7 @@ function ContactSection() {
                       variant="outline"
                       size="lg"
                       asChild
-                      className="border-gray-700/50 bg-gray-800/30 dark:bg-gray-900/30  transition-all duration-300"
+                      className="border-gray-700/50 dark:bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300"
                     >
                       <a href="https://github.com/dianesophia" target="_blank" rel="noopener noreferrer">
                         <Github className="w-5 h-5 mr-2 text-gray-300" />
@@ -95,7 +97,7 @@ function ContactSection() {
                       variant="outline"
                       size="lg"
                       asChild
-                      className="border-gray-700/50 bg-gray-800/30 dark:bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300"
+                      className="border-gray-700/50 dark:bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300"
                     >
                       <a href="https://linkedin.com/in/diane-sophia-fuentes-2913b6232" target="_blank" rel="noopener noreferrer">
                         <Linkedin className="w-5 h-5 mr-2 text-cyan-400" />
@@ -106,7 +108,8 @@ function ContactSection() {
                 </div>
               </div>
 
-              <Card className="border border-gray-500/50 dark:bg-gray-900/30  transition-all duration-300 rounded-lg">
+              <Card className="border border-gray-500/50 dark:bg-gray-900/30 transition-all duration-300 rounded-2xl shadow-md hover:shadow-xl">
+                <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
                 <CardContent className="p-6">
                   <h3 className="font-mono font-semibold text-xl text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">
                     Send a Message

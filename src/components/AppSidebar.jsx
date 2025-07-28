@@ -18,9 +18,9 @@ import {
 const getIconColors = (isDark) => ({
   welcome: isDark ? '#93c5fd' : '#3b82f6',
   about: isDark ? '#86efac' : '#22c55e',
-  project: isDark ? '#d8b4fe' : '#a855f7',
+  projects: isDark ? '#d8b4fe' : '#a855f7',
   skills: isDark ? '#fde047' : '#eab308',
-  resume: isDark ? '#fca5a5' : '#ef4444',
+  
   contact: isDark ? '#67e8f9' : '#06b6d4',
 });
 
@@ -39,20 +39,16 @@ const getItems = (isDark) => {
       icon: <User className="h-4 w-4 xs:h-5 xs:w-5" style={{ color: iconColors.about }} />,
     },
     {
-      title: "Project.tsx",
-      url: "#project",
-      icon: <Briefcase className="h-4 w-4 xs:h-5 xs:w-5" style={{ color: iconColors.project }} />,
+      title: "Projects.tsx",
+      url: "#projects",
+      icon: <Briefcase className="h-4 w-4 xs:h-5 xs:w-5" style={{ color: iconColors.projects }} />,
     },
     {
       title: "Skills.json",
       url: "#skills",
       icon: <Settings className="h-4 w-4 xs:h-5 xs:w-5" style={{ color: iconColors.skills }} />,
     },
-    {
-      title: "Resume",
-      url: "#resume",
-      icon: <FileText className="h-4 w-4 xs:h-5 xs:w-5" style={{ color: iconColors.resume }} />,
-    },
+    
     {
       title: "Contact.json",
       url: "#contact",
@@ -61,13 +57,13 @@ const getItems = (isDark) => {
   ];
 };
 
-export function AppSidebar({ open, setOpen }) {
+export function AppSidebar({ open }) {
   const { theme, toggleTheme } = useTheme();
   const [activeId, setActiveId] = useState("welcome");
   const isDark = theme === 'dark';
   const items = getItems(isDark);
 
-  // Debounce activeId updates to prevent rapid toggling
+  // Debounce activeId updates
   const debounce = (func, wait) => {
     let timeout;
     return (...args) => {
@@ -78,7 +74,7 @@ export function AppSidebar({ open, setOpen }) {
 
   // Handle section visibility with IntersectionObserver
   useEffect(() => {
-    const sectionIds = ["welcome", "about", "project", "skills", "resume", "contact"];
+    const sectionIds = ["welcome", "about", "projects", "skills", "resume", "contact"];
     const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
 
     if (sections.length === 0) {
@@ -141,7 +137,10 @@ export function AppSidebar({ open, setOpen }) {
         console.log(`Navigated to: ${sectionId}`);
       }, 100);
     } else {
-      console.warn(`Section with ID ${sectionId} not found.`);
+      console.warn(`Section with ID ${sectionId} not found. Falling back to welcome.`);
+      setActiveId("welcome");
+      window.history.replaceState(null, null, "#welcome");
+      document.getElementById("welcome")?.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
 
@@ -183,47 +182,32 @@ export function AppSidebar({ open, setOpen }) {
       }}
     >
       {/* Header */}
-      <div className="flex items-center justify-between gap-1 xs:gap-2 py-1 xs:py-2">
-        <div className="flex items-center gap-1 xs:gap-2">
-          <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-12 md:h-12 p-0.5 bg-gradient-to-tr from-pink-400 via-pink-500 to-pink-600 rounded-full">
-            <img
-              src={sopiyaE}
-              alt="Profile"
-              className="w-full h-full rounded-full object-cover bg-white"
-            />
+      <div className="flex items-center gap-1 xs:gap-2 py-1 xs:py-2">
+        <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-12 md:h-12 p-0.5 bg-gradient-to-tr from-pink-400 via-pink-500 to-pink-600 rounded-full">
+          <img
+            src={sopiyaE}
+            alt="Profile"
+            className="w-full h-full rounded-full object-cover bg-white"
+          />
+          
+        </div>
+        {open && (
+          <div className="ml-1 xs:ml-2">
+            <span
+              className="block text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-medium whitespace-nowrap"
+              style={{ color: isDark ? 'white' : '#1f2937' }}
+            >
+              Diane Sophia Fuentes
+            </span>
+            <span
+              className="block text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs"
+              style={{ color: isDark ? '#9ca3af' : '#6b7280' }}
+            >
+              Software Engineer
+            </span>
           </div>
-          {open && (
-            <div className="ml-1 xs:ml-2">
-              <span
-                className="block text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-medium whitespace-nowrap"
-                style={{ color: isDark ? 'white' : '#1f2937' }}
-              >
-                Diane Sophia Fuentes
-              </span>
-              <span
-                className="block text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs"
-                style={{ color: isDark ? '#9ca3af' : '#6b7280' }}
-              >
-                Software Engineer
-              </span>
-            </div>
-          )}
-        </div>
-        {/* Exit button for small screens */}
-        <div className="md:hidden">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setOpen(false)}
-            className="h-5 w-5 xs:h-6 xs:w-6 p-0.5 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-            aria-label="Close sidebar"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </Button>
-        </div>
+          
+        )}
       </div>
       <div className="border-b mx-0 mb-1" style={{ borderColor: isDark ? '#374151' : '#d1d5db' }}></div>
       {open && (

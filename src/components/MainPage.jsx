@@ -21,14 +21,14 @@ export function MainPage() {
         style={{ backgroundColor: isDark ? '#2d333b' : 'white' }} // Match EntirePage background color
       >
         {/* Sidebar (fixed) */}
-        <div className={`${!open ? 'hidden sm:block' : ''} h-full z-30`}>
+        <div className={`${!open ? 'hidden md:block' : ''} h-full`}>
           <AppSidebar open={open} setOpen={setOpen} />
         </div>
 
         {/* Main content with toggle button and scrollable page */}
         <main className="flex-1 relative flex flex-col h-full">
           {/* Toggle button - positioned to align with sidebar icons when closed */}
-          <div className={`absolute z-40 ${!open ? 'top-[20px] xs:top-[25px] sm:top-[30px] left-[10px] xs:left-[15px] sm:left-[18px]' : 'top-2 xs:top-3 left-2 xs:left-3'} transition-all duration-300`}>
+          <div className={`absolute z-10 ${!open ? 'top-[30px] left-[18px]' : 'top-3 left-3'} transition-all duration-300`}>
             <Button
               variant="ghost"
               size="icon"
@@ -40,15 +40,15 @@ export function MainPage() {
               }}
             >
               {open ? (
-                <IconLayoutSidebarLeftCollapse size={20} className="w-5 h-5 xs:w-6 xs:h-6 sm:w-auto sm:h-auto" />
+                <IconLayoutSidebarLeftCollapse size={22} />
               ) : (
-                <IconLayoutSidebarLeftExpand size={20} className="w-5 h-5 xs:w-6 xs:h-6 sm:w-auto sm:h-auto" />
+                <IconLayoutSidebarLeftExpand size={22} />
               )}
             </Button>
           </div>
 
           {/* Scrollable EntirePage */}
-          <div className="flex-1 overflow-y-auto px-0 xs:px-1 sm:px-2 md:px-4">
+          <div className="flex-1 overflow-y-auto px-2 sm:px-4">
             <EntirePage />
             {/*Outlet*/}
           </div>
