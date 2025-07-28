@@ -26,7 +26,7 @@ function ContactSection() {
       id="contact"
       className="min-h-screen flex items-center justify-center py-12 px-4 dark:bg-[#22272e]"
     >
-      <div className="max-w-6xl w-full">
+      <div className="max-w-7xl w-full">
         <Card
           className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500"
           style={{
