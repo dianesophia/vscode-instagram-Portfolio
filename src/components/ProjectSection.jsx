@@ -12,6 +12,9 @@ import rasp from '@/assets/rasp.png';
 import { Github, ExternalLink, Play } from 'lucide-react';
 import { Lens } from './ui/lens';
 import { ShineBorder } from './ui/shine-border';
+import { Pointer } from './ui/pointer';
+import { X } from 'lucide-react';
+import { DialogClose } from '@/components/ui/dialog';
 
 function ProjectSection() {
   const { theme } = useTheme();
@@ -63,7 +66,7 @@ function ProjectSection() {
       tags: ['React Native', 'Machine Learning', 'API'],
       techStack: ['React Native', 'Python', 'Machine Learning', 'API'],
       githubUrl: 'https://github.com/dianesophia/React_Native_Cooktrition_Facts',
-      demoUrl: 'https://github.com/dianesophia/React_Native_Cooktrition_Facts',
+      demoUrl: '',
       type: 'mobile',
     },
     {
@@ -85,11 +88,11 @@ function ProjectSection() {
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center justify-center py-8 px-4 sm:px-6 dark:bg-[#22272e] "
+      className="min-h-screen flex items-center justify-center py-8 px-4 sm:px-6  "
     >
       <div className="w-full max-w-[95%] sm:max-w-4xl lg:max-w-6xl">
         <Card
-          className="relative overflow-hidden rounded-2xl shadow-lg  hover:shadow-[0_8px_12px_-3px_rgba(0,0,0,0.3)]"
+          className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-[0_8px_12px_-3px_rgba(0,0,0,0.3)]"
           style={{
             backgroundColor: isDark ? '#22272e' : 'white',
             borderColor: isDark ? '#374151' : '#e5e7eb',
@@ -97,7 +100,7 @@ function ProjectSection() {
             color: isDark ? '#e2e8f0' : '#1a202c',
           }}
         >
-          
+          <Pointer className="fill-blue-500" />
           <CardContent className="p-4 sm:p-6 md:p-8">
             <div className="flex flex-col items-start text-left mb-6 sm:mb-8">
               <p className="text-xs sm:text-sm font-mono text-gray-500 dark:text-gray-400 mb-2">
@@ -115,7 +118,7 @@ function ProjectSection() {
               {projects.map((project) => (
                 <Card
                   key={project.id}
-                  className="group cursor-pointer rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300  dark:bg-gray-900/30 border border-gray-300 dark:border-gray-700"
+                  className="group cursor-pointer rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 dark:bg-gray-900/30 border border-gray-300 dark:border-gray-700"
                   onClick={() => setSelectedProject(project)}
                 >
                   <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
@@ -150,7 +153,7 @@ function ProjectSection() {
                         <Badge
                           key={index}
                           variant="outline"
-                          className="font-mono text-xs border-gray-300 dark:border-gray-700  dark:text-white"
+                          className="font-mono text-xs border-gray-300 dark:border-gray-700 dark:text-white"
                         >
                           {tag}
                         </Badge>
@@ -159,7 +162,6 @@ function ProjectSection() {
                   </CardContent>
                 </Card>
               ))}
-
             </div>
           </CardContent>
         </Card>
@@ -167,13 +169,22 @@ function ProjectSection() {
         {/* Project Modal */}
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
           <DialogContent
-            className="w-full max-w-[95%] sm:max-w-lg md:max-w-2xl max-h-[85vh] overflow-y-auto bg-white dark:bg-[#22272e] border border-gray-200 dark:border-[#36ffff] rounded-2xl shadow-xl transition-all duration-300"
+            className="w-full max-w-[95%] sm:max-w-lg md:max-w-2xl max-h-[85vh] overflow-y-auto dark:bg-[#22272e] border border-gray-200 dark:border-[#36ffff] rounded-2xl shadow-xl transition-all duration-300"
             style={{
               backgroundColor: isDark ? '#22272e' : 'white',
               borderColor: isDark ? '#36ffff' : '#e5e7eb',
               boxShadow: isDark ? '0 10px 15px -3px rgba(54, 255, 255, 0.2)' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
             }}
           >
+            <DialogClose asChild>
+              <button
+                className={`absolute top-4 right-4 ${isDark ? 'text-pink-500 hover:text-purple-500' : 'text-white !important hover:text-gray-200 !important'} transition-colors`}
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </DialogClose>
+
             {selectedProject && (
               <>
                 <DialogHeader>
@@ -190,7 +201,7 @@ function ProjectSection() {
                   >
                     <img
                       src={selectedProject.image}
-                      alt={selectedProject.title}
+                      alt={project.title}
                       className="w-full h-48 sm:h-64 md:h-72 object-cover rounded-lg shadow-xl"
                     />
                   </Lens>
@@ -198,7 +209,7 @@ function ProjectSection() {
                     <h4 className="font-mono font-semibold text-base sm:text-lg bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 mb-2">
                       Description
                     </h4>
-                    <p className="font-mono text-xs sm:text-sm  dark:text-white">
+                    <p className="font-mono text-xs sm:text-sm dark:text-white">
                       {selectedProject.longDescription}
                     </p>
                   </div>
@@ -219,22 +230,35 @@ function ProjectSection() {
                     </div>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    {/* View Code Button */}
                     <Button
                       size="lg"
-                      className="font-mono bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:opacity-90 transition-opacity w-full sm:w-auto text-sm sm:text-base"
+                      className="font-mono bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-pink-600 hover:to-purple-600 transition-all w-full sm:w-auto text-sm sm:text-base"
                     >
-                      <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={selectedProject.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center"
+                      >
                         <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                         View Code
                       </a>
                     </Button>
+
+                    {/* Live Demo Button */}
                     {selectedProject.demoUrl && (
                       <Button
                         variant="outline"
                         size="lg"
-                        className="font-mono border-gray-300 dark:border-[#36ffff]/50 bg-gray-800/30 dark:bg-gray-900/30 hover:bg-gray-800/50 dark:hover:bg-gray-900/50 text-gray-900 dark:text-white transition-all w-full sm:w-auto text-sm sm:text-base"
+                        className="font-mono bg-white dark:bg-[#22272e] border border-blue-400 dark:border-teal-400 text-blue-400 dark:text-teal-400 hover:bg-blue-400 hover:text-white dark:hover:bg-teal-400 dark:hover:text-black transition-all w-full sm:w-auto text-sm sm:text-base"
                       >
-                        <a href={selectedProject.demoUrl} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={selectedProject.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center"
+                        >
                           <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                           Live Demo
                         </a>

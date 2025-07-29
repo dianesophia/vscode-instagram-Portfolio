@@ -65,7 +65,7 @@ function SkillSection() {
   return (
     <section
       id="skills"
-      className="min-h-screen flex items-center justify-center py-12 px-4 dark:bg-[#22272e]"
+      className="min-h-screen flex items-center justify-center py-12 px-4 "
     >
       <div className="max-w-6xl w-full">
         <Card
@@ -92,6 +92,7 @@ function SkillSection() {
             </div>
 
             {/* Code-style skills display */}
+          {/*
             <div className="dark:bg-gray-900/50 border border-gray-300 dark:border-gray-700/50 rounded-lg p-6 font-mono text-sm mb-10 shadow-inner">
             
               <div className="text-gray-400 mb-4">
@@ -120,7 +121,7 @@ function SkillSection() {
               ))}
               <div className="text-gray-400">{'};'}</div>
             </div>
-
+*/}
             <div className="grid md:grid-cols-4 gap-6">
               {skillCategories.map((category) => (
                 <Card

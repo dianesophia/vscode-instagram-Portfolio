@@ -151,9 +151,9 @@ function AboutSection() {
                   <div className="flex items-center space-x-3 group">
                   <img
                       src={bgbLogo}
-                      alt="MYT Softdev Logo"
-                      className="w-10 h-10 object-contain rounded-full shadow-md transition-transform duration-300 group-hover:scale-110"
-                    /> {/* Placeholder for Boys and Girls Brigade logo */}
+                      alt="BGB Logo"
+                      className="w-10 h-10 object-contain shadow-md transition-transform duration-300 group-hover:scale-110"
+                    /> 
                     <div>
                       <p>Boys and Girls Brigade - Philippines — <span className="italic">Young Leader</span></p>
                       <p className="text-xs text-gray-500">June 2015 - Aug 2019</p>
