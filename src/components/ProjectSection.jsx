@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import cooktri from '@/assets/Cooktrition.png';
+import cooktri from '@/assets/cooktrition.png';
 import inspector from '@/assets/inspectorbill.png';
 import golden from '@/assets/goldenHaven.png';
 import fruitveg from '@/assets/fruitveg.png';
