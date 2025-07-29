@@ -49,7 +49,7 @@ function ContactSection() {
 
             <div className="grid lg:grid-cols-2 gap-6">
               <div className="space-y-6">
-                <div className="dark:bg-gray-900/50 border border-gray-500 rounded-2xl p-6 font-mono text-sm shadow-md hover:shadow-xl transition-all duration-300">
+                <div className="dark:bg-gray-900/50  border-gray-500 rounded-2xl p-6 font-mono text-sm shadow-md hover:shadow-xl transition-all duration-300">
                   <div className="text-gray-400 mb-4">
                     <span className="text-purple-400">const</span>{' '}
                     <span className="text-cyan-400">contact</span> = {'{'}

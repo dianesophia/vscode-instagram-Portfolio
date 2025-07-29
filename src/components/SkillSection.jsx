@@ -69,7 +69,7 @@ function SkillSection() {
     >
       <div className="max-w-6xl w-full">
         <Card
-          className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl"
+          className="relative overflow-hidden rounded-2xl shadow-lg  hover:shadow-2xl"
           style={{
             backgroundColor: isDark ? '#22272e' : 'white',
             borderColor: isDark ? '#374151' : '#e5e7eb',

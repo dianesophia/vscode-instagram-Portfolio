@@ -89,7 +89,7 @@ function ProjectSection() {
     >
       <div className="w-full max-w-[95%] sm:max-w-4xl lg:max-w-6xl">
         <Card
-          className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-[0_8px_12px_-3px_rgba(0,0,0,0.3)]"
+          className="relative overflow-hidden rounded-2xl shadow-lg  hover:shadow-[0_8px_12px_-3px_rgba(0,0,0,0.3)]"
           style={{
             backgroundColor: isDark ? '#22272e' : 'white',
             borderColor: isDark ? '#374151' : '#e5e7eb',

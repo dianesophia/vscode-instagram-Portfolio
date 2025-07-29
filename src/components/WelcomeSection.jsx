@@ -22,7 +22,7 @@ function WelcomeSection() {
           boxShadow: isDark ? '0 10px 15px -3px rgba(0, 0, 0, 0.5)' : ''
         }}
       >
-        
+
         <Pointer>
           <div className="text-2xl">👆</div>
         </Pointer>
@@ -61,33 +61,24 @@ function WelcomeSection() {
 
         {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row gap-4 w-full flex-wrap">
-          <Button
-            size="lg"
-            className="px-6 py-3 font-semibold hover:opacity-90 transition w-full sm:w-auto"
-            style={{
-              background: 'linear-gradient(to right, hsl(320 100% 70%), hsl(270 95% 75%), hsl(180 100% 70%))',
-              color: 'white'
-            }}
-          >
-            <Github className="w-5 h-5 mr-2" style={{ color: 'white' }} />
-            View My Work
-          </Button>
-          <Button
-            size="lg"
-            className="px-6 py-3 font-semibold hover:opacity-90 transition w-full sm:w-auto"
-            style={{
-              background: 'linear-gradient(to right, hsl(320 100% 70%), hsl(270 95% 75%), hsl(180 100% 70%))',
-              color: 'white'
-            }}
-          >
-            <a
-              href="/resume/Diane_Sophia_Fuentes_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Resume
+         
+
+          {/* Resume Button */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+            <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                className="bg-white text-[#2C6C82] font-semibold hover:bg-gray-100"
+                style={{
+                  background: 'linear-gradient(to right, hsl(320 100% 70%), hsl(270 95% 75%), hsl(180 100% 70%))',
+                  color: 'white'
+                }}
+              >
+                View Resume
+                <ArrowDown className="ml-2 w-5 h-5" />
+              </Button>
             </a>
-          </Button>
+          </div>
 
 
           {/* Social Icons */}
@@ -112,8 +103,11 @@ function WelcomeSection() {
 
         {/* Arrow */}
         <div className="mt-10 flex justify-start w-full">
-          <ArrowDown className="w-6 h-6 text-gray-400 dark:text-gray-500 animate-bounce" />
+          <a href="#about" className="cursor-pointer">
+            <ArrowDown className="w-6 h-6 text-gray-400 dark:text-gray-500 animate-bounce" />
+          </a>
         </div>
+
       </div>
     </div>
   );
