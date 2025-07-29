@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/context/ThemeContext';
 import { Pointer } from './ui/pointer';
-
+import { ShineBorder } from './ui/shine-border';
 
 function WelcomeSection() {
   const fullName = "Diane Sophia Fuentes";
@@ -23,9 +23,11 @@ function WelcomeSection() {
         }}
       >
 
+
         <Pointer>
           <div className="text-2xl">👆</div>
         </Pointer>
+        <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
         {/* Filename */}
         <p className="text-sm font-mono text-gray-500 dark:text-gray-400 mb-2">
           // Welcome.jsx

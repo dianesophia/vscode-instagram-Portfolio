@@ -77,6 +77,9 @@ function SkillSection() {
             color: isDark ? '#e2e8f0' : '#1a202c',
           }}
         >
+          <Pointer>
+          <div className="text-2xl">👆</div>
+        </Pointer>
           <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
           <CardContent className="p-8 md:p-12">
             <div className="flex flex-col items-start text-left mb-8">
@@ -90,9 +93,7 @@ function SkillSection() {
 
             {/* Code-style skills display */}
             <div className="dark:bg-gray-900/50 border border-gray-300 dark:border-gray-700/50 rounded-lg p-6 font-mono text-sm mb-10 shadow-inner">
-            <Pointer>
-          <div className="text-2xl">👆</div>
-        </Pointer>
+            
               <div className="text-gray-400 mb-4">
                 <span className="text-purple-400">const</span>{' '}
                 <span className="text-cyan-400">skills</span> = {'{'}
