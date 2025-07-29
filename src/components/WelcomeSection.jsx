@@ -76,7 +76,7 @@ function WelcomeSection() {
           {/* Buttons + Socials */}
           <div className="mt-8 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between w-full">
             {/* Resume Button */}
-            <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/Fuentes_Resume.pdf" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 className="font-semibold hover:opacity-90"
