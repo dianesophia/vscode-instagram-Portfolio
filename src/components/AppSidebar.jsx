@@ -183,7 +183,7 @@ export function AppSidebar({ open }) {
     >
       {/* Header */}
       <div className="flex items-center gap-1 xs:gap-2 py-1 xs:py-2">
-        <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-12 md:h-12 p-0.5 bg-gradient-to-tr from-pink-400 via-pink-500 to-pink-600 rounded-full">
+        <div className="w-7 h-7 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-12 md:h-12 p-0.5 bg-gradient-to-tr from-pink-400 via-pink-500 to-pink-600 rounded-full">
           <img
             src={sopiyaE}
             alt="Profile"

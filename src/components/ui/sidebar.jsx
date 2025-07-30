@@ -4,6 +4,7 @@ import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { useTheme } from "@/context/ThemeContext";
+import { Button } from "./button";
 
 const SidebarContext = createContext(undefined);
 
@@ -73,7 +74,7 @@ export const DesktopSidebar = ({ className, children, ...props }) => {
 };
 
 export const MobileSidebar = ({ className, children, ...props }) => {
-  const { open } = useSidebar();
+  const { open, setOpen } = useSidebar(); // Destructure setOpen
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -91,9 +92,20 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               className
             )}
             style={{
-              backgroundColor: isDark ? '#171717' : 'white', // bg-white/neutral-900 equivalent
+              backgroundColor: isDark ? '#171717' : 'white',
             }}
           >
+            {/* Close Button for Mobile */}
+            <div className="flex justify-end mb-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setOpen(false)} // Set open to false on click
+                className="h-8 w-8 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                <IconX className="h-5 w-5" />
+              </Button>
+            </div>
             {children}
           </motion.div>
         )}
@@ -101,6 +113,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
     </div>
   );
 };
+
 
 
 
