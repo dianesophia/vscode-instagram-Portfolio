@@ -20,7 +20,7 @@ export function MainPage() {
   return (
     <SidebarProvider open={open} setOpen={setOpen}>
       <div
-        className="flex h-screen overflow-hidden font-inter" // Added font-inter for consistency
+        className="flex h-screen overflow-hidden font-inter hidden md:block" // Added font-inter for consistency
         style={{ backgroundColor: isDark ? '#2d333b' : 'white' }} // Match EntirePage background color
       >
         {/* AppSidebar component, which internally handles desktop vs. mobile rendering */}
