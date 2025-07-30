@@ -12,8 +12,8 @@ import { useTheme } from "@/context/ThemeContext";
 
 export function MainPage() {
   // `open` state controls whether the sidebar is expanded (desktop) or visible (mobile overlay)
-  // Default to true for desktop, but the MobileSidebar component handles its initial hidden state
-  const [open, setOpen] = useState(true);
+  // Default to false to have the sidebar closed by default
+  const [open, setOpen] = useState(false); // Changed to false
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -31,6 +31,7 @@ export function MainPage() {
         <main className="flex-1 relative flex flex-col h-full overflow-hidden">
           {/* Desktop Sidebar Toggle Button (visible only on medium screens and up) */}
           <div className={`absolute z-10 hidden md:block ${!open ? 'top-[30px] left-[18px]' : 'top-3 left-3'} transition-all duration-300`}>
+            {/* Uncomment the Button below if you want a desktop toggle 
             <Button
               variant="ghost"
               size="icon"
@@ -46,10 +47,10 @@ export function MainPage() {
               ) : (
                 <IconLayoutSidebarLeftExpand size={22} />
               )}
-            </Button>
+            </Button>*/}
           </div>
 
-          {/* Mobile Sidebar Open Button (visible only on small screens) */}
+          {/* Mobile Sidebar Open Button (visible only on small screens) 
           <div className="absolute z-10 top-3 left-3 md:hidden">
             <Button
               variant="ghost"
@@ -61,9 +62,9 @@ export function MainPage() {
                 color: isDark ? '#e5e7eb' : '#1f2937',
               }}
             >
-              <IconMenu2 size={22} /> {/* Menu icon for opening sidebar */}
+              <IconMenu2 size={22} /> 
             </Button>
-          </div>
+          </div> */}
 
           {/* Scrollable EntirePage content */}
           {/* Adjust padding-left based on sidebar open state for desktop.
