@@ -137,7 +137,7 @@ function ContactSection() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
-              {/* Left Side */}
+              {/* Left Side fiififfo */}
               <div className="space-y-8">
                 <div className="dark:bg-gray-900/50 border border-gray-500 rounded-2xl p-6 font-mono text-sm shadow-md hover:shadow-lg transition-all duration-300">
                   <div className="text-gray-400 mb-4">
@@ -154,7 +154,7 @@ function ContactSection() {
                             href={method.href}
                             className={`${method.color} hover:text-green-300 transition-colors`}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer" 
                           >
                             "{method.value}"
                           </a>
