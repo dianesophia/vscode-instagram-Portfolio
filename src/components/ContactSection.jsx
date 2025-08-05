@@ -103,14 +103,15 @@ function ContactSection() {
       className="min-h-screen flex items-center justify-center py-8 px-4 sm:px-6 md:px-8"
     >
       <div className="w-full px-4 sm:px-6 md:px-10 lg:max-w-7xl">
-        <Card
-          className="relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300"
-          style={{
-            backgroundColor: isDark ? '#22272e' : 'white',
-            borderColor: isDark ? '#374151' : '#e5e7eb',
-            borderWidth: '1px',
-          }}
-        >
+      <Card
+  className="relative w-full max-w-full rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden"
+  style={{
+    backgroundColor: isDark ? '#22272e' : 'white',
+    borderColor: isDark ? '#374151' : '#e5e7eb',
+    borderWidth: '1px',
+  }}
+>
+
           <Pointer>
             <svg
               width="24"
