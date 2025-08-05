@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 
@@ -61,34 +61,34 @@ function ContactSection() {
       value: 'dianefuentes2002@gmail.com',
       color: 'text-blue-400',
       href: 'mailto:dianefuentes2002@gmail.com',
-      icon: <Mail className="w-5 h-5" />,
+      icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       name: 'phone',
       value: '+63 9398283199',
       color: 'text-green-400',
       href: 'tel:+639398283199',
-      icon: <Phone className="w-5 h-5" />,
+      icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       name: 'location',
       value: 'Philippines, Cebu City',
       color: 'text-teal-400',
-      icon: <MapPin className="w-5 h-5" />,
+      icon: <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       name: 'github',
       value: 'github.com/dianesophia',
       color: 'text-gray-300',
       href: 'https://github.com/dianesophia',
-      icon: <Github className="w-5 h-5" />,
+      icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       name: 'linkedin',
       value: 'linkedin.com/in/diane-sophia-fuentes-2913b6232',
       color: 'text-cyan-400',
       href: 'https://linkedin.com/in/diane-sophia-fuentes-2913b6232',
-      icon: <Linkedin className="w-5 h-5" />,
+      icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       name: 'status',
@@ -100,7 +100,7 @@ function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 md:px-8"
+      className="min-h-screen flex items-center justify-center py-8 px-4 sm:px-6 md:px-8"
     >
       <div className="w-full px-4 sm:px-6 md:px-10 lg:max-w-7xl">
         <Card
@@ -129,7 +129,7 @@ function ContactSection() {
               <p className="text-sm font-mono text-gray-500 dark:text-gray-400 mb-2 tracking-wider">
                 // contact.json
               </p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
                 Get In Touch
               </h2>
             </div>
@@ -152,7 +152,7 @@ function ContactSection() {
                             href={method.href}
                             className={`${method.color} hover:text-green-300 transition-colors`}
                             target="_blank"
-                            rel="noopener noreferrer" 
+                            rel="noopener noreferrer"
                           >
                             "{method.value}"
                           </a>
@@ -175,7 +175,7 @@ function ContactSection() {
                   <h3 className="font-mono font-semibold text-lg md:text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">
                     Let's Connect
                   </h3>
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                     <Button
                       variant="outline"
                       size="lg"
@@ -213,12 +213,12 @@ function ContactSection() {
               {/* Right Side: Form */}
               <Card className="border border-gray-500/50 dark:bg-gray-900/30 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300">
                 <ShineBorder shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']} />
-                <CardContent className="p-4 sm:p-6">
+                <CardContent className="p-4 sm:p-6 lg:p-8">
                   <h3 className="font-mono font-semibold text-lg md:text-xl text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">
                     Send a Message
                   </h3>
                   <form ref={form} onSubmit={sendEmail} className="space-y-4">
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="name" className="font-mono text-sm text-gray-500 dark:text-gray-400">
                           Name
