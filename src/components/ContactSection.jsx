@@ -104,7 +104,7 @@ function ContactSection() {
     >
       <div className="w-full px-4 sm:px-6 md:px-10 lg:max-w-7xl">
       <Card
-  className="relative w-full max-w-full rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden"
+  className="relative w-full max-w-full rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden sm:pr-40"
   style={{
     backgroundColor: isDark ? '#22272e' : 'white',
     borderColor: isDark ? '#374151' : '#e5e7eb',
