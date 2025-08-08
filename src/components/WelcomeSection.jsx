@@ -65,7 +65,7 @@ function WelcomeSection() {
               <span className="text-orange-500">role</span>: <span className="text-green-500">"Software Engineer"</span>,
             </p>
             <p className="text-muted-foreground dark:text-gray-400 pl-6">
-              <span className="text-orange-500">passion</span>: <span className="text-green-500">"Full Stack Developer && AI Learner"</span>,
+              <span className="text-orange-500">passion</span>: <span className="text-green-500">"Full Stack Developer"</span>,
             </p>
             <p className="text-muted-foreground dark:text-gray-400 pl-6">
               <span className="text-orange-500">status</span>: <span className="text-green-500">"Available for hire"</span>
